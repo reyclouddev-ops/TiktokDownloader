@@ -1,0 +1,270 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+    background:#0f172a;
+    color:#fff;
+    min-height:100vh;
+    overflow-x:hidden;
+}
+
+.background{
+    position:fixed;
+    inset:0;
+    background:
+    radial-gradient(circle at top left,#2563eb55,transparent 35%),
+    radial-gradient(circle at bottom right,#7c3aed55,transparent 35%);
+    filter:blur(80px);
+    z-index:-1;
+}
+
+.container{
+    width:100%;
+    max-width:900px;
+    margin:auto;
+    padding:40px 20px;
+}
+
+.card{
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:18px;
+    padding:25px;
+    margin-bottom:20px;
+    box-shadow:0 10px 40px rgba(0,0,0,.25);
+    animation:fade .4s ease;
+}
+
+@keyframes fade{
+
+from{
+opacity:0;
+transform:translateY(20px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+h1{
+    font-size:34px;
+    text-align:center;
+}
+
+.subtitle{
+    text-align:center;
+    color:#cbd5e1;
+    margin-top:8px;
+    margin-bottom:25px;
+}
+
+.input-group{
+    display:flex;
+    gap:10px;
+}
+
+.input-group input{
+    flex:1;
+    padding:15px;
+    border:none;
+    outline:none;
+    border-radius:12px;
+    background:#1e293b;
+    color:#fff;
+    font-size:15px;
+}
+
+.input-group input::placeholder{
+    color:#94a3b8;
+}
+
+.input-group button{
+    border:none;
+    cursor:pointer;
+    border-radius:12px;
+    padding:0 24px;
+    background:#2563eb;
+    color:#fff;
+    font-weight:bold;
+    transition:.25s;
+}
+
+.input-group button:hover{
+    background:#1d4ed8;
+    transform:translateY(-2px);
+}
+
+.loading{
+    margin-top:25px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:15px;
+}
+
+.spinner{
+    width:28px;
+    height:28px;
+    border:3px solid rgba(255,255,255,.15);
+    border-top:3px solid #3b82f6;
+    border-radius:50%;
+    animation:spin .8s linear infinite;
+}
+
+@keyframes spin{
+
+100%{
+transform:rotate(360deg);
+}
+
+}
+
+.hidden{
+    display:none;
+}
+
+.cover img{
+    width:100%;
+    border-radius:14px;
+    margin-bottom:20px;
+}
+
+.author{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    margin-bottom:15px;
+}
+
+.author img{
+    width:65px;
+    height:65px;
+    border-radius:50%;
+    object-fit:cover;
+}
+
+.author h2{
+    font-size:22px;
+}
+
+.author span{
+    color:#94a3b8;
+}
+
+#caption{
+    margin-top:10px;
+    line-height:1.7;
+    color:#e2e8f0;
+}
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:12px;
+    margin-top:25px;
+}
+
+.stat{
+    background:#1e293b;
+    padding:15px;
+    border-radius:12px;
+    text-align:center;
+}
+
+.stat strong{
+    display:block;
+    font-size:22px;
+    color:#60a5fa;
+}
+
+.stat span{
+    color:#94a3b8;
+    font-size:14px;
+}
+
+.buttons{
+    margin-top:25px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:12px;
+}
+
+.buttons button{
+    padding:15px;
+    border:none;
+    cursor:pointer;
+    border-radius:12px;
+    background:#2563eb;
+    color:#fff;
+    font-weight:bold;
+    transition:.25s;
+}
+
+.buttons button:hover{
+    background:#1d4ed8;
+    transform:translateY(-2px);
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(180px,1fr));
+    gap:15px;
+    margin-top:20px;
+}
+
+.gallery img{
+    width:100%;
+    border-radius:12px;
+    transition:.25s;
+}
+
+.gallery img:hover{
+    transform:scale(1.04);
+}
+
+#toast{
+    position:fixed;
+    left:50%;
+    bottom:25px;
+    transform:translateX(-50%);
+    background:#16a34a;
+    color:#fff;
+    padding:15px 22px;
+    border-radius:12px;
+    opacity:0;
+    pointer-events:none;
+    transition:.3s;
+    z-index:999;
+}
+
+#toast.show{
+    opacity:1;
+}
+
+@media(max-width:700px){
+
+.input-group{
+flex-direction:column;
+}
+
+.input-group button{
+padding:15px;
+}
+
+.stats{
+grid-template-columns:repeat(2,1fr);
+}
+
+.buttons{
+grid-template-columns:1fr;
+}
+
+}
