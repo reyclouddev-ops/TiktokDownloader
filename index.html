@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ReyCloudAPI • TikTok Downloader</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="background"></div>
+
+    <main class="container">
+
+        <div class="card">
+
+            <h1>🎵 ReyCloudAPI</h1>
+            <p class="subtitle">
+                TikTok Downloader
+            </p>
+
+            <div class="input-group">
+
+                <input
+                    id="url"
+                    type="text"
+                    placeholder="https://vt.tiktok.com/..." />
+
+                <button id="download">
+                    Download
+                </button>
+
+            </div>
+
+            <div id="loading" class="loading hidden">
+
+                <div class="spinner"></div>
+
+                <span>Mengambil data...</span>
+
+            </div>
+
+        </div>
+
+        <div id="result" class="card hidden">
+
+            <div class="cover">
+
+                <img
+                    id="cover"
+                    src=""
+                    alt="cover">
+
+            </div>
+
+            <div class="info">
+
+                <div class="author">
+
+                    <img
+                        id="avatar"
+                        src=""
+                        alt="avatar">
+
+                    <div>
+
+                        <h2 id="nickname"></h2>
+
+                        <span id="username"></span>
+
+                    </div>
+
+                </div>
+
+                <p id="caption"></p>
+
+                <div class="stats">
+
+                    <div class="stat">
+
+                        <strong id="views">0</strong>
+
+                        <span>Views</span>
+
+                    </div>
+
+                    <div class="stat">
+
+                        <strong id="likes">0</strong>
+
+                        <span>Likes</span>
+
+                    </div>
+
+                    <div class="stat">
+
+                        <strong id="comments">0</strong>
+
+                        <span>Comments</span>
+
+                    </div>
+
+                    <div class="stat">
+
+                        <strong id="shares">0</strong>
+
+                        <span>Shares</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="buttons">
+
+                <button id="btn-nowm">
+                    🎥 No Watermark
+                </button>
+
+                <button id="btn-hd">
+                    ✨ HD Video
+                </button>
+
+                <button id="btn-wm">
+                    💧 Watermark
+                </button>
+
+                <button id="btn-music">
+                    🎵 Music
+                </button>
+
+                <button id="btn-cover">
+                    🖼 Cover
+                </button>
+
+            </div>
+
+        </div>
+
+        <div id="gallery-card" class="card hidden">
+
+            <h2>📷 Images</h2>
+
+            <div id="gallery" class="gallery"></div>
+
+        </div>
+
+    </main>
+
+    <div id="toast"></div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
